@@ -6,7 +6,7 @@
             <li class="breadcrumb-item active">Produk</li>
           </ol>
 
-        <link rel="icon" type="image/png" href="images/icons/produk-50.png"/>
+        <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/produk-50.png');?>"/>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
