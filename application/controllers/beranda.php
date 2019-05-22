@@ -17,3 +17,4 @@ class Beranda extends CI_Controller{
 }
 
 ?>
+aaaaa
