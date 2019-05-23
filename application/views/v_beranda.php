@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-xl-1 col-sm-6 mb-3" style="">
                     <span class="float-left">
-                    <a href="?hal=pengeluaran">
+                    <a href="#">
                     <img src="<?php echo base_url('/assets/images/icons/pengeluaran.png');?>">
                     </a>
                     </span>
