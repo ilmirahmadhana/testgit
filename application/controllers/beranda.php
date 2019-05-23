@@ -27,15 +27,34 @@ class Beranda extends CI_Controller{
     function transaksi_penjualan(){
         $this->load->view('v_transaksi-penjualan');
     }
+    
+    function transaksi_pembelian(){
+        $this->load->view('v_transaksi-pembelian');
+    }
 
     function list_transaksi_penjualan(){
         $data = array('data'=>$this->m_bupe->ambil_data_penjualan());
         $this->load->view('v_list-transaksi-penjualan',$data);
     }
     
+    function list_transaksi_pembelian(){
+        $data = array('data'=>$this->m_bupe->ambil_data_pembelian());
+        $this->load->view('v_list-transaksi-pembelian',$data);
+    }
+    
     function pengeluaran(){
         $data = array('data'=>$this->m_bupe->ambil_data_pengeluaran());
         $this->load->view('v_pengeluaran',$data);
+    }
+    
+    function kontak_customer(){
+        $data = array('data'=>$this->m_bupe->ambil_data_customer());
+        $this->load->view('v_kontak-customer',$data);
+    }
+    
+    function kontak_sales(){
+        $data = array('data'=>$this->m_bupe->ambil_data_sales());
+        $this->load->view('v_kontak-sales',$data);
     }
 
 }
