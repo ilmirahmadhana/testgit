@@ -24,6 +24,15 @@ class Beranda extends CI_Controller{
         $this->load->view('v_produk',$data);
     }
     
+    function transaksi_penjualan(){
+        $this->load->view('v_transaksi-penjualan');
+    }
+
+    function list_transaksi_penjualan(){
+        $data = array('data'=>$this->m_bupe->ambil_data_penjualan());
+        $this->load->view('v_list-transaksi-penjualan',$data);
+    }
+    
     function pengeluaran(){
         $data = array('data'=>$this->m_bupe->ambil_data_pengeluaran());
         $this->load->view('v_pengeluaran',$data);

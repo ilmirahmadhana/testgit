@@ -10,8 +10,8 @@
           </div>
           <div class="modal-body">Pilih Transaksi Anda</div>
           <div class="modal-footer">
-            <a class="btn btn-success" href="beranda.php?hal=transaksi-penjualan">Penjualan</a>
-            <a class="btn btn-primary" href="beranda.php?hal=transaksi-pembelian">Pembelian</a>
+            <a class="btn btn-success" href="beranda/transaksi_penjualan">Penjualan</a>
+            <a class="btn btn-primary" href="#">Pembelian</a>
           </div>
         </div>
       </div>

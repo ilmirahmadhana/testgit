@@ -4,8 +4,8 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/pengeluaran-50.png');?>"/>
-    <title>Pengeluaran</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/list-50.png');?>"/>
+    <title>List Transaksi Penjualan</title>
     
     <?php
         //include(APPPATH.'libraries/modal.php');  
@@ -81,30 +81,31 @@
     <div id="wrapper">
       <div id="content-wrapper">
         <div class="container-fluid">
-            
-         <!-- Breadcrumbs-->
+          
+        <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
               <a href="../beranda">Beranda</a>
             </li>
-            <li class="breadcrumb-item active">Pengeluaran</li>
+            <li class="breadcrumb-item">
+                <a href="javascript: goBack()">Transaksi Penjualan</a>
+            </li>
+            <li class="breadcrumb-item active">List Transaksi</li>
           </ol>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              List Pengeluaran</div>
+              List Transaksi Penjualan</div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Jumlah Pengeluaran</th>
-                      <th>Keterangan</th>
-                      <th colspan="2" style="text-align:center;">Aksi</th>
+                      <th>Kode Transaksi</th>
+                      <th>Tanggal Transaksi</th>
                     </tr>
                   </thead>
                   <!--<tfoot>
@@ -121,21 +122,15 @@
                       <?php
                         $autonum=1;
                         foreach($data as $x):
-                        $id=$x['id_pengeluaran'];
+                        $id=$x['id_pj'];
                         $tgl=$x['tgl'];
-                        $jml_pengeluaran=$x['jumlah_pengeluaran'];
-                        $ket=$x['keterangan'];
-                      ?>
+                    ?>
                     <tr>
                       <td><?php echo $autonum;?></td>
+                      <td><?php echo $id;?></td>
                       <td><?php echo date("d-m-Y", strtotime($tgl));?></td>
-                      <td>Rp. <?php echo number_format($jml_pengeluaran);?></td>
-                      <td><?php echo $ket;?></td>
-                      <td style="text-align:center;"><a href="pages/edit-pengeluaran.php?id=<?php echo $id;?>">Edit</a></td>
-                      <td style="text-align:center;"><a href="act/delete-pengeluaran.php?id=<?php echo $id;?>" onclick="return  confirm('Anda yakin ingin hapus data?')">Hapus</a></td>
                     </tr>
                       <?php $autonum++; endforeach; ?>
-                      <a href="#" data-toggle="modal" data-target="#inputpengeluaranModal" style="padding-left:10px;float:right;"><span class="fas fa-plus"></span></a>
                   </tbody>
                 </table>
               </div>
