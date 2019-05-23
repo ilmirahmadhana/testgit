@@ -4,7 +4,7 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/home.png');?>"/>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/pengeluaran-50.png');?>"/>
     <title>Pengeluaran</title>
     
     <?php
@@ -90,8 +90,6 @@
             <li class="breadcrumb-item active">Pengeluaran</li>
           </ol>
 
-        <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/pengeluaran-50.png');?>"/>
-
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
@@ -143,6 +141,7 @@
               </div>
             </div>
             <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
+          </div>
           </div>
         <!-- /.container-fluid -->
 

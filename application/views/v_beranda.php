@@ -8,7 +8,7 @@
     <title>Beranda</title>
     
     <?php
-        //include(APPPATH.'libraries/modal.php');  
+        include(APPPATH.'libraries/modal.php');  
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
