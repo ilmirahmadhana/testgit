@@ -15,12 +15,17 @@ class Beranda extends CI_Controller{
 		$this->load->view('v_beranda');
 	}
 	function pengeluaran(){
-		$this->load->view('v_pengeluaran');
+		$data = array('data'=>$this->m_bupe->ambil_data_pengeluaran());
+		$this->load->view('v_pengeluaran',$data);
 	}
-    
+
+    function pembelian(){
+		$this->load->view('v_pembelian');
+	}
     function produk(){
         $data = array('data'=>$this->m_bupe->ambil_data_produk());
         $this->load->view('v_produk',$data);
     }
+
 }
 ?>
