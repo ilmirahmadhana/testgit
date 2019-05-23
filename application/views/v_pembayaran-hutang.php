@@ -6,7 +6,7 @@
             <li class="breadcrumb-item active">Hutang</li>
           </ol>
 
-        <link rel="icon" type="image/png" href="images/icons/pembayaran-50.png"/>
+         <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/produk-50.png');?>"/>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
@@ -25,17 +25,19 @@
                       <th style="text-align:center;">Aksi</th>
                     </tr>
                   </thead>
-                  <!--<tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
+                  <div class="col-xl-1 col-sm-6 mb-3">
+                    <span class="float-left">
+                        <a href="#" data-toggle="modal" data-target="#pembayaranModal">
+                        <img src="http://localhost/testgit/assets/images/icons/pembayaran.png">
+                        </a>
+                    </span>
+                    <span class="float-left">Pembayaran</span>
+                </div>
                       <th>Start date</th>
                       <th>Salary</th>
                     </tr>
                   </tfoot>-->
-                  <tbody>
+                  <body>
                       <?php
                         $autonum = 1;
                         $query = mysqli_query($koneksi,"SELECT * FROM hutang WHERE jml_hutang > 0");
@@ -49,7 +51,7 @@
                       <td style="text-align:center;"><a href="pages/bayar-hutang-sales.php?id=<?php echo $data['id_hutang'];?>">Bayar</a></td>
                     </tr>
                       <?php $autonum++; } ?>
-                  </tbody>
+                  </body>
                 </table>
               </div>
             </div>

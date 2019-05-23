@@ -15,6 +15,7 @@ class Beranda extends CI_Controller{
 	function index(){
 		$this->load->view('v_beranda');
 	}
+<<<<<<< .merge_file_a12028
     
     function produk(){
         $data = array('data'=>$this->m_bupe->ambil_data_produk());
@@ -22,4 +23,7 @@ class Beranda extends CI_Controller{
     }
 }
 
+=======
+	}
+>>>>>>> .merge_file_a01628
 ?>
