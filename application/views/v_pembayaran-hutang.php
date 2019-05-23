@@ -25,12 +25,14 @@
                       <th style="text-align:center;">Aksi</th>
                     </tr>
                   </thead>
-                  <!--<tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
+                  <div class="col-xl-1 col-sm-6 mb-3">
+                    <span class="float-left">
+                        <a href="#" data-toggle="modal" data-target="#pembayaranModal">
+                        <img src="http://localhost/testgit/assets/images/icons/pembayaran.png">
+                        </a>
+                    </span>
+                    <span class="float-left">Pembayaran</span>
+                </div>
                       <th>Start date</th>
                       <th>Salary</th>
                     </tr>
