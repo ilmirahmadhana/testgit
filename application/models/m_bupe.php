@@ -3,7 +3,6 @@ class M_bupe extends CI_Model{
     
 	function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);
-<<<<<<< HEAD
 	}	
 	
 }
@@ -17,4 +16,3 @@ class M_bupe extends CI_Model{
     }
 }
 ?>
->>>>>>> daff0689968de2ec034d4c3c320fc3cc8c3b310c
