@@ -1,7 +1,91 @@
-          <!-- Breadcrumbs-->
+<!DOCTYPE html>
+<html lang="en">
+<?php
+    /*error_reporting(0);*/
+?>
+  <head>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/home.png');?>"/>
+    <title>Produk</title>
+    
+    <?php
+        //include(APPPATH.'libraries/modal.php');  
+    ?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+        
+    <!-- Bootstrap core CSS-->
+    <link href="<?php echo base_url('/assets/vendor/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="<?php echo base_url('/assets/vendor/fontawesome-free/css/all.min.css');?>" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="<?php echo base_url('/assets/vendor/datatables/dataTables.bootstrap4.css');?>" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="<?php echo base_url('/assets/css/sb-admin.css');?>" rel="stylesheet">
+      
+    <link href="<?php echo base_url('/assets/css/util.css');?>" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="beranda">Buku Penjualan</a>
+      <i class="fs-14 p-l-10" style="color:white;text-decoration:underline;">&nbsp;Buku Besar Akuntansi</i>
+
+      <!-- Navbar Search -->
+      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2" onchange="<?php ?>">
+          <div class="input-group-append">
+            <a class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+        </div>
+      </form>
+
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="badge badge-danger" style="font-size:10px;"><?php echo "!";?></span>
+            <i class="fas fa-bell fa-fw"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+            <a class="dropdown-item" href="<?php echo "beranda.php?hal=pembayaran-piutang"?>"><?php echo "Ada pelanggan<br>yang masih berhutang";?></a>
+          </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-cog fa-fw"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#">Hi, <?php echo $this->session->userdata("nama"); ?></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="beranda.php?hal=pengaturan-akun">Pengaturan</a>
+            <a class="dropdown-item" href="beranda.php?hal=lupa-password">Lupa Password</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<?php echo base_url('bukupenjualan/logout');?>">Keluar</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div id="wrapper">
+      <div id="content-wrapper">
+        <div class="container-fluid">
+            
+        <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="?hal=beranda">Beranda</a>
+              <a href="./">Beranda</a>
             </li>
             <li class="breadcrumb-item active">Produk</li>
           </ol>
@@ -15,17 +99,6 @@
               List Produk</div>
             <div class="card-body">
               <div class="table-responsive">
-                <?php
-                $tgl = date("Y-m-d");
-                $querypro = "SELECT max(id_brg) as maxID FROM produk";
-                $has = mysqli_query($koneksi,$querypro);
-                $dat = mysqli_fetch_array($has);
-                $idBRG = $dat['maxID'];
-                $brg = "BRG";
-                $noUrut = (int) substr($idBRG, 3, 7);
-                $noUrut++;
-                $idBRG = $brg . sprintf("%04s", $noUrut);
-                ?>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -49,22 +122,27 @@
                     </tr>
                   </tfoot>-->
                   <tbody>
-                      <?php
-                        $autonum = 1;
-                        $query = mysqli_query($koneksi,"SELECT * FROM produk");
-                        while($data = mysqli_fetch_array($query)){
-                      ?>
+                    <?php
+                        $autonum=1;
+                        foreach($data as $x):
+                        $id=$x['id_brg'];
+                        $nm_brg=$x['nama_brg'];
+                        $hrg_beli=$x['harga_beli'];
+                        $hrg_jual=$x['harga_jual'];
+                        $jenis_brg=$x['jenis_brg'];
+                        $stok=$x['stok'];
+                    ?>
                     <tr>
                       <td><?php echo $autonum;?></td>
-                      <td><?php echo $data['nama_brg'];?></td>
-                      <td>Rp. <?php echo number_format($data['harga_beli']);?></td>
-                      <td>Rp. <?php echo number_format($data['harga_jual']);?></td>
-                      <td><?php echo $data['jenis_brg'];?></td>
-                      <td><?php echo $data['stok'];?></td>
-                      <td style="text-align:center;"><a href="pages/edit-produk.php?id=<?php echo $data['id_brg'];?>">Edit</a></td>
-                      <td style="text-align:center;"><a href="act/delete-produk.php?id=<?php echo $data['id_brg'];?>" onclick="return  confirm('Anda yakin ingin hapus data?')">Hapus</a></td>
+                      <td><?php echo $nm_brg;?></td>
+                      <td>Rp. <?php echo number_format($hrg_beli);?></td>
+                      <td>Rp. <?php echo number_format($hrg_jual);?></td>
+                      <td><?php echo $jenis_brg;?></td>
+                      <td><?php echo $stok;?></td>
+                      <td style="text-align:center;"><a href="pages/edit-produk.php?id=<?php echo $id;?>">Edit</a></td>
+                      <td style="text-align:center;"><a href="act/delete-produk.php?id=<?php echo $id;?>" onclick="return  confirm('Anda yakin ingin hapus data?')">Hapus</a></td>
                     </tr>
-                      <?php $autonum++; } ?>
+                      <?php $autonum++; endforeach; ?>
                       <a href="#" data-toggle="modal" data-target="#inputprodukModal" style="padding-left:10px;float:right;"><span class="fas fa-plus"></span></a>
                   </tbody>
                 </table>
@@ -72,4 +150,60 @@
             </div>
             <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
           </div>
+        
+        </div>
         <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer id="kaki" class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center">
+              <span>Copyright © Powered by Politeknik Negeri Jember - MIF 2017</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+    
+    <?php
+        //require("modal.php");
+    ?>
+      
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url('/assets/vendor/jquery/jquery.min.js');?>"></script>
+    <script src="<?php echo base_url('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url('/assets/vendor/jquery-easing/jquery.easing.min.js');?>"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="<?php echo base_url('/assets/vendor/chart.js/Chart.min.js');?>"></script>
+    <script src="<?php echo base_url('/assets/vendor/datatables/jquery.dataTables.js');?>"></script>
+    <script src="<?php echo base_url('/assets/vendor/datatables/dataTables.bootstrap4.js');?>"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url('/assets/js/sb-admin.min.js');?>"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="<?php echo base_url('/assets/js/demo/datatables-demo.js');?>"></script>
+    <script src="<?php echo base_url('/assets/js/demo/chart-area-demo.js');?>"></script>
+    
+    <!-- go to previous pages-->
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    
+  </body>
+
+</html>

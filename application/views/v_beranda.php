@@ -89,49 +89,49 @@
             <div class="row">
                 <div class="col-xl-1 col-sm-6 mb-3" style="">
                     <span class="float-left">
-                        <a href="beranda.php?hal=produk">
-                        <img src="<?php echo base_url('/assets/images/icons/produk.png');?>">
-                        </a>
+                    <a href="beranda/produk">
+                    <img src="<?php echo base_url('/assets/images/icons/produk.png');?>">
+                    </a>
                     </span>
                     <span class="float-left">Produk</span>
                 </div>
                 <div class="col-xl-1 col-sm-6 mb-3">
                     <span class="float-left">
-                        <a href="#" data-toggle="modal" data-target="#transaksiModal">
-                        <img src="<?php echo base_url('/assets/images/icons/transaksi.png');?>">
-                        </a>
+                    <a href="#" data-toggle="modal" data-target="#transaksiModal">
+                    <img src="<?php echo base_url('/assets/images/icons/transaksi.png');?>">
+                    </a>
                     </span>
                     <span class="float-left">Transaksi</span>
                 </div>
                 <div class="col-xl-1 col-sm-6 mb-3">
                     <span class="float-left">
-                        <a href="#" data-toggle="modal" data-target="#pembayaranModal">
-                        <img src="<?php echo base_url('/assets/images/icons/pembayaran.png');?>">
-                        </a>
+                    <a href="#" data-toggle="modal" data-target="#pembayaranModal">
+                    <img src="<?php echo base_url('/assets/images/icons/pembayaran.png');?>">
+                    </a>
                     </span>
                     <span class="float-left">Pembayaran</span>
                 </div>
                 <div class="col-xl-1 col-sm-6 mb-3" style="">
                     <span class="float-left">
-                        <a href="?hal=pengeluaran">
-                        <img src="<?php echo base_url('/assets/images/icons/pengeluaran.png');?>">
-                        </a>
+                    <a href="?hal=pengeluaran">
+                    <img src="<?php echo base_url('/assets/images/icons/pengeluaran.png');?>">
+                    </a>
                     </span>
                     <span class="float-left">Pengeluaran</span>
                 </div>
                 <div class="col-xl-1 col-sm-6 mb-3" style="">
                     <span class="float-left">
-                        <a href="#" data-toggle="modal" data-target="#kontakModal">
-                        <img src="<?php echo base_url('/assets/images/icons/kontak.png');?>">
-                        </a>
+                    <a href="#" data-toggle="modal" data-target="#kontakModal">
+                    <img src="<?php echo base_url('/assets/images/icons/kontak.png');?>">
+                    </a>
                     </span>
                     <span class="float-left">Kontak</span>
                 </div>
                 <div class="col-xl-1 col-sm-6 mb-3">
                     <span class="float-left">
-                        <a href="#" name="laporan" data-toggle="modal" data-target="#laporanModal">
-                        <img src="<?php echo base_url('/assets/images/icons/laporan.png');?>">
-                        </a>
+                    <a href="#" name="laporan" data-toggle="modal" data-target="#laporanModal">
+                    <img src="<?php echo base_url('/assets/images/icons/laporan.png');?>">
+                    </a>
                     </span>
                     <span class="float-left">Laporan</span>
                 </div>
