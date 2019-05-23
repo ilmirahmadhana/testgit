@@ -3,8 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Bukupenjualan extends CI_Controller {
     
-    function __construct()
-    {
+    function __construct(){
         parent::__construct();
         //load model bupeModel
         $this->load->model('m_bupe');
@@ -54,4 +53,6 @@ class Bukupenjualan extends CI_Controller {
     function buat_akun(){
         $this->load->view('buat-akun');
     }
+    
 }
+?>
