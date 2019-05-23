@@ -85,7 +85,7 @@
         <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="./">Beranda</a>
+              <a href="..">Beranda</a>
             </li>
             <li class="breadcrumb-item active">Produk</li>
           </ol>

@@ -9,5 +9,10 @@ class M_bupe extends CI_Model{
 		//return $query->result();
 		return $query->result_array();
     }
+    function ambil_data_pengeluaran(){
+        $query = $this->db->query("SELECT * FROM pengeluaran");
+		//return $query->result();
+		return $query->result_array();
+    }
 }
 ?>
