@@ -4,8 +4,8 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/transaksi-50.png');?>"/>
-    <title>Transaksi Pembelian</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/kontak-50.png');?>"/>
+    <title>Kontak Sales</title>
     
     <?php
         //include(APPPATH.'libraries/modal.php');  
@@ -81,38 +81,33 @@
     <div id="wrapper">
       <div id="content-wrapper">
         <div class="container-fluid">
-          <!-- Breadcrumbs-->
+
+        <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
               <a href="../beranda">Beranda</a>
             </li>
-            <li class="breadcrumb-item active">Transaksi Pembelian</li>
             <li class="breadcrumb-item">
-              <a href="./list_transaksi_pembelian">List Transaksi</a>
+              <a href="../beranda/kontak_customer">Kontak Customer</a>
             </li>
+            <li class="breadcrumb-item active">Kontak Sales</li>
           </ol>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Form Transaksi Pembelian</div>
-            <form action="" method="post">
+              Kontak Sales</div>
             <div class="card-body">
               <div class="table-responsive">
-                <div class="form-group" style="max-width:200px;">
-                <div class="form-label-group">
-                    <input type="text" id="idtranspb" name="idtranspb" class="form-control" placeholder="ID Transaksi" required="required" autofocus="autofocus" value="">
-                    <label for="idtranspb">ID Transaksi</label>
-                </div>
-                </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Nama barang</th>
-                      <th>Jumlah</th>
-                      <th>Harga</th>
+                      <th>Nama</th>
+                      <th>Perusahaan</th>
+                      <th>Alamat</th>
+                      <th>No telepon</th>
                       <th colspan="2" style="text-align:center;">Aksi</th>
                     </tr>
                   </thead>
@@ -127,47 +122,34 @@
                     </tr>
                   </tfoot>-->
                   <tbody>
+                    <?php
+                        $autonum=1;
+                        foreach($data as $x):
+                        $id=$x['id_sales'];
+                        $nama=$x['nm_sales'];
+                        $namapt=$x['nm_perusahaan'];
+                        $alamat=$x['alamat_perusahaan'];
+                        $notelp=$x['no_telepon'];
+                    ?>
                     <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td style="text-align:center;"><a href="pages/edit-item-penjualan.php?id=">Edit</a></td>
-                      <td style="text-align:center;"><a href="act/delete-item-penjualan.php?id=" class="" onclick="return  confirm('Anda yakin ingin hapus item?')">Hapus</a></td>
+                      <td><?php echo $autonum;?></td>
+                      <td><?php echo $nama;?></td>
+                      <td><?php echo $namapt;?></td>
+                      <td><?php echo $alamat;?></td>
+                      <td><?php echo $notelp;?></td>
+                      <td style="text-align:center;"><a href="pages/edit-customer.php?id=<?php echo $id;?>">Edit</a></td>
+                      <td style="text-align:center;"><a href="act/delete-customer.php?id=<?php echo $id;?>" onclick="return  confirm('Anda yakin ingin hapus data?')">Hapus</a></td>
                     </tr>
-                      <a href="#" data-toggle="modal" data-target="#inputpenjualanModal" style="padding-left:10px;float:right;"><span class="fas fa-plus"></span></a>
+                      <?php $autonum++; endforeach; ?>
+                      <a href="#" data-toggle="modal" data-target="#inputcustomerModal" style="padding-left:10px;float:right;"><span class="fas fa-plus"></span></a>
                   </tbody>
                 </table>
-              </div>  
+              </div>
             </div>
-            <script>
-            function bayar(){
-                var a = document.getElementById("totalHarga").value;
-                var b = document.getElementById("bayarPB").value;
-                document.getElementById("kembaliPB").value = b - a;
-            }
-            
-            </script>
-            <div class="modal-footer">
-            <div class="form-label-group" style="max-width:200px;float:right;">
-                <input type="text" id="totalHargaPB" name="totalHargaPB" class="form-control" placeholder="Total" required="required" autofocus="autofocus" value="">
-                <label for="totalHargaPB">Total</label>
-            </div>
-            <div class="form-label-group" style="max-width:200px;float:right;">
-                <input type="text" id="bayarPB" name="bayarPB" class="form-control" placeholder="Bayar" required="required" autofocus="autofocus" onchange="bayar()" onclick="bayar()">
-                <label for="bayarPB">Bayar</label>
-            </div>
-            <div class="form-label-group" style="max-width:200px;float:right;">
-                <input type="text" id="kembaliPB" name="kembaliPB" class="form-control" placeholder="Hutang" required="required" autofocus="autofocus">
-                <label for="kembaliPB">Hutang</label>
-            </div>
-            </div>
-            <div class="card-footer">
-            <input type="submit" class="btn btn-primary" name="selesaiPB" value="Selesai" style="float:right;margin:0px 10px 10px 0px;">
-            <a class="btn btn-danger" href="../beranda" style="float:right;margin:0px 10px 10px 0px;" onclick="return  confirm('Anda yakin ingin batalkan transaksi?')">Batal</a>
-            </div>
-            </form>
+            <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
           </div>
+        <!-- /.container-fluid -->
+
             
           </div>
         <!-- /.container-fluid -->

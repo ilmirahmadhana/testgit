@@ -106,6 +106,7 @@
                       <th>No</th>
                       <th>Kode Transaksi</th>
                       <th>Tanggal Transaksi</th>
+                      <th>Total</th>
                     </tr>
                   </thead>
                   <!--<tfoot>
@@ -119,16 +120,18 @@
                     </tr>
                   </tfoot>-->
                   <tbody>
-                      <?php
+                    <?php
                         $autonum=1;
                         foreach($data as $x):
                         $id=$x['id_pj'];
                         $tgl=$x['tgl'];
+                        $total=$x['total_harga'];
                     ?>
                     <tr>
                       <td><?php echo $autonum;?></td>
                       <td><?php echo $id;?></td>
                       <td><?php echo date("d-m-Y", strtotime($tgl));?></td>
+                      <td>Rp. <?php echo number_format($total);?></td>
                     </tr>
                       <?php $autonum++; endforeach; ?>
                   </tbody>
