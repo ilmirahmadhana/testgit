@@ -9,7 +9,7 @@
             </li>
           </ol>
 
-        <link rel="icon" type="image/png" href="images/icons/transaksi-50.png"/>
+        <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/transaksi-50.png');?>"/>
 
           <!-- DataTables Example -->
           <div class="card mb-3">

@@ -1,11 +1,11 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="?hal=beranda">Beranda</a>
+              <a href="../beranda">Beranda</a>
             </li>
             <li class="breadcrumb-item active">Transaksi Pembelian</li>
             <li class="breadcrumb-item">
-              <a href="?hal=list-transaksi-pembelian">List Transaksi</a>
+              <a href="../list-transaksi-pembelian">List Transaksi</a>
             </li>
           </ol>
 
