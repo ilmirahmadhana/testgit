@@ -11,6 +11,7 @@ class Beranda extends CI_Controller{
 			redirect(base_url("bukupenjualan"));
 		}
 	}
+    
     function index(){
 		$this->load->view('v_beranda');
 	}
@@ -41,6 +42,7 @@ class Beranda extends CI_Controller{
         $data = array('data'=>$this->m_bupe->ambil_data_piutang());
         $this->load->view('v_pembayaran-hutang',$data);
     }
+    
     function list_transaksi_penjualan(){
         $data = array('data'=>$this->m_bupe->ambil_data_penjualan());
         $this->load->view('v_list-transaksi-penjualan',$data);

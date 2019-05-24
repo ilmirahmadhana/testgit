@@ -52,11 +52,13 @@ class M_bupe extends CI_Model{
 		//return $query->result();
 		return $query->result_array();
     }
+    
     function ambil_data_laporanpb(){
         $query = $this->db->query("SELECT * FROM transaksi_pb");
         //return $query->result();
         return $query->result_array();
     }
+    
     function ambil_data_laporanpj(){
         $query = $this->db->query("SELECT * FROM transaksi_pj");
         //return $query->result();
