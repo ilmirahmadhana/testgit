@@ -28,7 +28,12 @@ class M_bupe extends CI_Model{
 		//return $query->result();
 		return $query->result_array();
     }
-
+ 
+    function ambil_data_hutang(){
+        $query = $this->db->query(" SELECT * FROM hutang WHERE jml_hutang > 0");
+		//return $query->result();
+		return $query->result_array();
+    }
     
     function ambil_data_pengeluaran(){
         $query = $this->db->query("SELECT * FROM pengeluaran");
