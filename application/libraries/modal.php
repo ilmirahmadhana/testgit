@@ -10,8 +10,8 @@
           </div>
           <div class="modal-body">Pilih Transaksi Anda</div>
           <div class="modal-footer">
-            <a class="btn btn-success" href="beranda.php?hal=transaksi-penjualan">Penjualan</a>
-            <a class="btn btn-primary" href="beranda.php?hal=transaksi-pembelian">Pembelian</a>
+            <a class="btn btn-success" href="beranda/transaksi_penjualan">Penjualan</a>
+            <a class="btn btn-primary" href="beranda/transaksi_pembelian">Pembelian</a>
           </div>
         </div>
       </div>
@@ -788,8 +788,8 @@
           </div>
           <div class="modal-body">Pilih kontak customer atau sales</div>
           <div class="modal-footer">
-            <a class="btn btn-secondary" href="?hal=kontak-customer">Customer</a>
-            <a class="btn btn-secondary" href="?hal=kontak-sales">Sales</a>
+            <a class="btn btn-secondary" href="beranda/kontak_customer">Customer</a>
+            <a class="btn btn-secondary" href="beranda/kontak_sales">Sales</a>
           </div>
         </div>
       </div>

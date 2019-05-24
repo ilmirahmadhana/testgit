@@ -4,11 +4,11 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/home.png');?>"/>
-    <title>Beranda</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/kontak-50.png');?>"/>
+    <title>Kontak Customer</title>
     
     <?php
-        include(APPPATH.'libraries/modal.php');  
+        //include(APPPATH.'libraries/modal.php');  
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,64 +81,76 @@
     <div id="wrapper">
       <div id="content-wrapper">
         <div class="container-fluid">
-            
-            <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Beranda</li>
-            </ol>
-            <div class="row">
-                <div class="col-xl-1 col-sm-6 mb-3" style="">
-                    <span class="float-left">
-                    <a href="beranda/produk">
-                    <img src="<?php echo base_url('/assets/images/icons/produk.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Produk</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                    <a href="#" data-toggle="modal" data-target="#transaksiModal">
-                    <img src="<?php echo base_url('/assets/images/icons/transaksi.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Transaksi</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                    <a href="#" data-toggle="modal" data-target="#pembayaranModal">
-                    <img src="<?php echo base_url('/assets/images/icons/pembayaran.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Pembayaran</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3" style="">
-                    <span class="float-left">
-                    <a href="beranda/pengeluaran">
-                    <img src="<?php echo base_url('/assets/images/icons/pengeluaran.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Pengeluaran</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3" style="">
-                    <span class="float-left">
-                    <a href="#" data-toggle="modal" data-target="#kontakModal">
-                    <img src="<?php echo base_url('/assets/images/icons/kontak.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Kontak</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                    <a href="#" name="laporan" data-toggle="modal" data-target="#laporanModal">
-                    <img src="<?php echo base_url('/assets/images/icons/laporan.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Laporan</span>
-                </div>
+
+        <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="../beranda">Beranda</a>
+            </li>
+            <li class="breadcrumb-item active">Kontak Customer</li>
+            <li class="breadcrumb-item">
+              <a href="../beranda/kontak_sales">Kontak Sales</a>
+            </li>
+          </ol>
+
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Kontak Customer</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Alamat</th>
+                      <th>No telepon</th>
+                      <th colspan="2" style="text-align:center;">Aksi</th>
+                    </tr>
+                  </thead>
+                  <!--<tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
+                  </tfoot>-->
+                  <tbody>
+                    <?php
+                        $autonum=1;
+                        foreach($data as $x):
+                        $id=$x['id_customer'];
+                        $nama=$x['nm_customer'];
+                        $alamat=$x['alamat'];
+                        $notelp=$x['no_telepon'];
+                    ?>
+                    <tr>
+                      <td><?php echo $autonum;?></td>
+                      <td><?php echo $nama;?></td>
+                      <td><?php echo $alamat;?></td>
+                      <td><?php echo $notelp;?></td>
+                      <td style="text-align:center;"><a href="pages/edit-customer.php?id=<?php echo $id;?>">Edit</a></td>
+                      <td style="text-align:center;"><a href="act/delete-customer.php?id=<?php echo $id;?>" onclick="return  confirm('Anda yakin ingin hapus data?')">Hapus</a></td>
+                    </tr>
+                      <?php $autonum++; endforeach; ?>
+                      <a href="#" data-toggle="modal" data-target="#inputcustomerModal" style="padding-left:10px;float:right;"><span class="fas fa-plus"></span></a>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            
-        </div>
+            <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
+          </div>
         <!-- /.container-fluid -->
+
+            
+          </div>
+        <!-- /.container-fluid -->
+
 
         <!-- Sticky Footer -->
         <footer id="kaki" class="sticky-footer">

@@ -4,11 +4,11 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/home.png');?>"/>
-    <title>Beranda</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/list-50.png');?>"/>
+    <title>List Transaksi Pembelian</title>
     
     <?php
-        include(APPPATH.'libraries/modal.php');  
+        //include(APPPATH.'libraries/modal.php');  
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,64 +81,69 @@
     <div id="wrapper">
       <div id="content-wrapper">
         <div class="container-fluid">
-            
-            <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Beranda</li>
-            </ol>
-            <div class="row">
-                <div class="col-xl-1 col-sm-6 mb-3" style="">
-                    <span class="float-left">
-                    <a href="beranda/produk">
-                    <img src="<?php echo base_url('/assets/images/icons/produk.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Produk</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                    <a href="#" data-toggle="modal" data-target="#transaksiModal">
-                    <img src="<?php echo base_url('/assets/images/icons/transaksi.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Transaksi</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                    <a href="#" data-toggle="modal" data-target="#pembayaranModal">
-                    <img src="<?php echo base_url('/assets/images/icons/pembayaran.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Pembayaran</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3" style="">
-                    <span class="float-left">
-                    <a href="beranda/pengeluaran">
-                    <img src="<?php echo base_url('/assets/images/icons/pengeluaran.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Pengeluaran</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3" style="">
-                    <span class="float-left">
-                    <a href="#" data-toggle="modal" data-target="#kontakModal">
-                    <img src="<?php echo base_url('/assets/images/icons/kontak.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Kontak</span>
-                </div>
-                <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                    <a href="#" name="laporan" data-toggle="modal" data-target="#laporanModal">
-                    <img src="<?php echo base_url('/assets/images/icons/laporan.png');?>">
-                    </a>
-                    </span>
-                    <span class="float-left">Laporan</span>
-                </div>
+          
+        <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="../beranda">Beranda</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript: goBack()">Transaksi Pembelian</a>
+            </li>
+            <li class="breadcrumb-item active">List Transaksi</li>
+          </ol>
+
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              List Transaksi Pembelian</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Kode Transaksi</th>
+                      <th>Tanggal Transaksi</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <!--<tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
+                  </tfoot>-->
+                  <tbody>
+                    <?php
+                        $autonum=1;
+                        foreach($data as $x):
+                        $id=$x['id_pb'];
+                        $tgl=$x['tgl'];
+                        $total=$x['total_harga'];
+                    ?>
+                    <tr>
+                      <td><?php echo $autonum;?></td>
+                      <td><?php echo $id;?></td>
+                      <td><?php echo date("d-m-Y", strtotime($tgl));?></td>
+                      <td>Rp. <?php echo number_format($total);?></td>
+                    </tr>
+                      <?php $autonum++; endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
+            <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
+          </div>
             
-        </div>
+          </div>
         <!-- /.container-fluid -->
+
 
         <!-- Sticky Footer -->
         <footer id="kaki" class="sticky-footer">

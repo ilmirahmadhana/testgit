@@ -4,7 +4,7 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/home.png');?>"/>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/produk-50.png');?>"/>
     <title>Produk</title>
     
     <?php
@@ -89,8 +89,6 @@
             </li>
             <li class="breadcrumb-item active">Produk</li>
           </ol>
-
-        <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/produk-50.png');?>"/>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
