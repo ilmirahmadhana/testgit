@@ -30,7 +30,7 @@
           <div class="modal-body">Pilih Pembayaran Anda</div>
           <div class="modal-footer">
             <a class="btn btn-primary" href="?hal=pembayaran-hutang">Hutang</a>
-            <a class="btn btn-success" href="?hal=pembayaran-piutang">Piutang</a>
+            <a class="btn btn-success" href="beranda/pembayaran_piutang">Piutang</a>
           </div>
         </div>
       </div>
