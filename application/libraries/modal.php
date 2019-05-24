@@ -29,7 +29,7 @@
           </div>
           <div class="modal-body">Pilih Pembayaran Anda</div>
           <div class="modal-footer">
-            <a class="btn btn-primary" href="beranda/pembayaran-hutang">Hutang</a>
+            <a class="btn btn-primary" href="beranda/pembayaran_hutang">Hutang</a>
             <a class="btn btn-success" href="beranda/pembayaran_piutang">Piutang</a>
           </div>
         </div>

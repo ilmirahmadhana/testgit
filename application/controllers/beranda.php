@@ -39,7 +39,7 @@ class Beranda extends CI_Controller{
     }
 
     function pembayaran_hutang(){
-        $data = array('data'=>$this->m_bupe->ambil_data_piutang());
+        $data = array('data'=>$this->m_bupe->ambil_data_hutang());
         $this->load->view('v_pembayaran-hutang',$data);
     }
     

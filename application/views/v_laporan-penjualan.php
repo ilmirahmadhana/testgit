@@ -86,10 +86,10 @@
             <li class="breadcrumb-item">
               <a href="../beranda">Beranda</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="breadcrumb-item active">Laporan</a>
-            </li>
             <li class="breadcrumb-item active">Laporan Penjualan</li>
+            <li class="breadcrumb-item">
+              <a href="../beranda/laporan_pembelian">Laporan Pembelian</a>
+            </li>
           </ol>
 
           <!-- DataTables Example -->

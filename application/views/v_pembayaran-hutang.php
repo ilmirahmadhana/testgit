@@ -4,8 +4,8 @@
     /*error_reporting(0);*/
 ?>
   <head>
-    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/home.png');?>"/>
-    <title>Produk</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/pembayaran-50.png');?>"/>
+    <title>Pembayaran</title>
     
     <?php
         //include(APPPATH.'libraries/modal.php');  
@@ -81,15 +81,16 @@
     <div id="wrapper">
       <div id="content-wrapper">
         <div class="container-fluid">
+            
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="?hal=beranda">Beranda</a>
+              <a href="../beranda">Beranda</a>
             </li>
-            <li class="breadcrumb-item active">Hutang</li>
+            <li class="breadcrumb-item active">Pembayaran Hutang</li>
           </ol>
 
-         <link rel="icon" type="image/png" href="<?php echo base_url('/assets/images/icons/produk-50.png');?>"/>
+        <link rel="icon" type="image/png" href="images/icons/pembayaran-50.png"/>
 
           <!-- DataTables Example -->
           <div class="card mb-3">
@@ -108,40 +109,43 @@
                       <th style="text-align:center;">Aksi</th>
                     </tr>
                   </thead>
-                  <div class="col-xl-1 col-sm-6 mb-3">
-                    <span class="float-left">
-                        <a href="#" data-toggle="modal" data-target="#pembayaranModal">
-                        <img src="http://localhost/testgit/assets/images/icons/pembayaran.png">
-                        </a>
-                    </span>
-                    <span class="float-left">Pembayaran</span>
-                </div>
+                  <!--<tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
                       <th>Start date</th>
                       <th>Salary</th>
                     </tr>
                   </tfoot>-->
-                  <body>
-                      <?php
-                        $autonum = 1;
-                        $query = mysqli_query($koneksi,"SELECT * FROM hutang WHERE jml_hutang > 0");
-                        while($data = mysqli_fetch_array($query)){
-                      ?>
+                  <tbody>
+                    <?php
+                        $autonum=1;
+                        foreach($data as $x):
+                        $id=$x['id_hutang'];
+                        $hutang=$x['jml_hutang'];
+                        $tgl=$x['tgl_jthtempo'];
+                        $ket=$x['ket'];
+                    ?>
                     <tr>
                       <td><?php echo $autonum;?></td>
-                      <td>Rp. <?php echo number_format($data['jml_hutang']);?></td>
-                      <td><?php echo date("d-m-Y", strtotime($data['tgl_jthtempo']));?></td>
-                      <td><?php echo $data['ket'];?></td>
-                      <td style="text-align:center;"><a href="pages/bayar-hutang-sales.php?id=<?php echo $data['id_hutang'];?>">Bayar</a></td>
+                      <td>Rp. <?php echo number_format($hutang);?></td>
+                      <td><?php echo date("d-m-Y", strtotime($tgl));?></td>
+                      <td><?php echo $ket;?></td>
+                      <td style="text-align:center;"><a href="pages/bayar-hutang-sales.php?id=<?php echo $id;?>">Bayar</a></td>
                     </tr>
-                      <?php $autonum++; } ?>
-                  </body>
+                 <?php $autonum++; endforeach; ?>
+                  </tbody>
                 </table>
               </div>
             </div>
             <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
           </div>
+
+        </div>
         <!-- /.container-fluid -->
-        
+
         <!-- Sticky Footer -->
         <footer id="kaki" class="sticky-footer">
           <div class="container my-auto">
@@ -195,4 +199,3 @@
   </body>
 
 </html>
-
