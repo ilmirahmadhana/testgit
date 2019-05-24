@@ -827,7 +827,7 @@
           <div class="modal-body">Pilih laporan</div>
           <div class="modal-footer">
             <a class="btn btn-success" href="?hal=laporan-penjualan">Penjualan</a>
-            <a class="btn btn-primary" href="?hal=laporan-pembelian">Pembelian</a>
+            <a class="btn btn-primary" href="beranda/laporan_pembelian">Pembelian</a>
           </div>
         </div>
       </div>

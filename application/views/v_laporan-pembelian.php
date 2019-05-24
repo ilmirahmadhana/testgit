@@ -141,7 +141,6 @@
             <div class="card-footer small text-muted">Diupdate kemarin pada jam 11:59 PM</div>
           </div>
         <!-- /.container-fluid -->
-
             
           </div>
         <!-- /.container-fluid -->
