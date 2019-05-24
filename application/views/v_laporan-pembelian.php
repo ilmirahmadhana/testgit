@@ -87,7 +87,7 @@
               <a href="../beranda">Beranda</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="../beranda/kontak_customer">Laporan</a>
+              <a href="../beranda/laporan_pembelian">Laporan</a>
             </li>
             <li class="breadcrumb-item active">Laporan Pembelian</li>
           </ol>
