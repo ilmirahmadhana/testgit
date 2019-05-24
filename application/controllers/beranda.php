@@ -67,14 +67,15 @@ class Beranda extends CI_Controller{
     }
     
     function laporan_penjualan(){
-        $data = array('data'=>$this->m_bupe->ambil_data_sales());
-        $this->load->view('v_kontak-sales',$data);
+        $data = array('data'=>$this->m_bupe->ambil_data_laporanpj());
+        $this->load->view('v_laporan-penjualan',$data);
     }
-    
+
     function laporan_pembelian(){
-        $data = array('data'=>$this->m_bupe->ambil_data_sales());
-        $this->load->view('v_kontak-sales',$data);
+        $data = array('data'=>$this->m_bupe->ambil_data_laporanpb());
+        $this->load->view('v_laporan-pembelian',$data);
     }
+
 
 }
 ?>
