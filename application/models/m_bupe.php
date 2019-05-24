@@ -14,5 +14,6 @@ class M_bupe extends CI_Model{
 		//return $query->result();
 		return $query->result_array();
     }
+    
 }
 ?>
