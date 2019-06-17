@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lingkaran_produk">#FFFF00FF</color>
+    <color name="lingkaran_penjualan">#139599</color>
+    <color name="lingkaran_pengeluaran">#ff9340</color>
+    <color name="lingkaran_hutang">#464</color>
+
+</resources>
